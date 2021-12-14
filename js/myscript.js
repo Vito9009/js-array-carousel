@@ -68,4 +68,15 @@ for (let i = 0; i < imgArray.length; i++){
 
 document.querySelector(".my_main-picture").innerHTML = mainPicture;
 document.querySelector(".my_preview-images").innerHTML = previewImg;
+
+prev = document.getElementById("prev");
+succ = document.getElementById("succ"); SOSTITUIRE CLASS CON ID IN HTML
+
+prev.addEventListener("click", function(){
+    }
+});
+
+succ.addEventListener("click", function(){    
+});
+
 */
