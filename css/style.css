@@ -23,8 +23,16 @@ img{
     height: calc(100% / 5);
 }
 
-.my_preview-images{
+.my_preview-images, .my_main-picture{
     position: relative;
+}
+
+.my_main-picture .my_pic-info{
+    position: absolute;
+    color: white;
+    padding: 0 50px;
+    text-align: end;
+    bottom: 10px;
 }
 
 .my_preview-images .prev, .my_preview-images .succ{
@@ -44,7 +52,6 @@ img{
 .my_preview-images .succ{
     bottom: 10px;
 }
-
 
 #active{
     opacity: 1;
