@@ -34,3 +34,38 @@ titlePicture.innerHTML = titleArray[0];
 
 let infoPicture = document.getElementById("info-pic");
 infoPicture.innerHTML = textArray[0];
+
+
+/*
+*******
+*TEST *
+*******
+
+let mainPicture = '';
+
+let previewImg = `
+<div class="prev">
+    <i class="fas fa-chevron-up"></i>
+</div>
+<div class="succ">
+    <i class="fas fa-chevron-down"></i>
+</div>`;
+
+for (let i = 0; i < imgArray.length; i++){
+    mainPicture += `
+        <img id="main-pic" src="${imgArray[i]}" alt="">
+
+        <div class="my_pic-info">
+            <h5 id="title-info-pic">${titleArray[i]}</h5>
+            <p id="info-pic">${textArray[i]}</p>
+        </div>`;
+    previewImg += `
+    <div class="my_preview-images">
+    <img src="${imgArray[i]}" alt="">
+
+    </div>`;
+}
+
+document.querySelector(".my_main-picture").innerHTML = mainPicture;
+document.querySelector(".my_preview-images").innerHTML = previewImg;
+*/
