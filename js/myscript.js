@@ -1,6 +1,6 @@
+// Definizione degli array
 
-/*
-const items = [
+const imgArray = [
     'img/01.jpg',
     'img/02.jpg',
     'img/03.jpg',
@@ -8,7 +8,7 @@ const items = [
     'img/05.jpg'
 ];
 
-const title = [
+const titleArray = [
     'Svezia',
     'Svizzera',
     'Gran Bretagna',
@@ -16,7 +16,7 @@ const title = [
     'Paradise'
 ]
 
-const text = [
+const textArray = [
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
     'Lorem ipsum',
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
@@ -24,4 +24,13 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
-*/
+// Definizione delle variabili
+
+let mainPicture = document.getElementById("main-pic");
+mainPicture.src = imgArray[0];
+
+let titlePicture = document.getElementById("title-info-pic");
+titlePicture.innerHTML = titleArray[0];
+
+let infoPicture = document.getElementById("info-pic");
+infoPicture.innerHTML = textArray[0];
