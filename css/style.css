@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-fluid{
+    height: 50vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+img{
+    height: 100%;
+    width: 100%;
+}
+
+.my_preview-images img{
+    opacity: 75%;
+    height: calc(100% / 5);
+}
