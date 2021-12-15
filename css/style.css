@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: rgb(160, 160, 160);
+}
+
 .container-fluid{
     height: 50vh;
     width: 50%;
@@ -16,6 +20,7 @@
 img{
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 
 .my_preview-images img{
@@ -35,7 +40,11 @@ img{
     bottom: 10px;
 }
 
-.my_preview-images .prev, .my_preview-images .succ{
+.picture-show{
+    display: none;
+}
+
+.my_preview-images .prev, .my_preview-images .next{
     position: absolute;
     background-color: rgb(255, 255, 255);
     border-radius: 100%;
@@ -49,11 +58,19 @@ img{
     top: 10px;
 }
 
-.my_preview-images .succ{
+.my_preview-images .next{
     bottom: 10px;
 }
 
-#active{
+#my_preview-selected{
     opacity: 1;
     border: 3px solid rgb(255, 255, 255);
+}
+
+.hidden{
+    display: none;
+}
+
+#active{
+    display: block;
 }

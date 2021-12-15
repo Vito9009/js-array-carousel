@@ -14,7 +14,7 @@ const titleArray = [
     'Gran Bretagna',
     'Germania',
     'Paradise'
-]
+];
 
 const textArray = [
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
@@ -22,61 +22,41 @@ const textArray = [
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
-]
+];
 
-// Definizione delle variabili
+const mainPicture = document.querySelector(".my_main-picture");    // Selettore contenitore main
+const previewImage = document.querySelector(".my_preview-images");// Selettore contenitore preview
 
-let mainPicture = document.getElementById("main-pic");
-mainPicture.src = imgArray[0];
+// Definizione variabili
+let imgShowed = "";
+let imgSide = "";
+let classActive = 1;
 
-let titlePicture = document.getElementById("title-info-pic");
-titlePicture.innerHTML = titleArray[0];
-
-let infoPicture = document.getElementById("info-pic");
-infoPicture.innerHTML = textArray[0];
-
-
-/*
-*******
-*TEST *
-*******
-
-let mainPicture = '';
-
-let previewImg = `
-<div class="prev">
-    <i class="fas fa-chevron-up"></i>
-</div>
-<div class="succ">
-    <i class="fas fa-chevron-down"></i>
-</div>`;
-
+// Cicli for per inserimento immagini e testo in html
 for (let i = 0; i < imgArray.length; i++){
-    mainPicture += `
+    imgShowed += `
+    <div class="picture-show">
         <img id="main-pic" src="${imgArray[i]}" alt="">
 
         <div class="my_pic-info">
             <h5 id="title-info-pic">${titleArray[i]}</h5>
             <p id="info-pic">${textArray[i]}</p>
-        </div>`;
-    previewImg += `
-    <div class="my_preview-images">
-    <img src="${imgArray[i]}" alt="">
+        </div>
 
-    </div>`;
+    </div>
+    `;
 }
 
-document.querySelector(".my_main-picture").innerHTML = mainPicture;
-document.querySelector(".my_preview-images").innerHTML = previewImg;
+for (let i = 0; i < imgArray.length; i++){
+    imgSide += `
 
-prev = document.getElementById("prev");
-succ = document.getElementById("succ"); SOSTITUIRE CLASS CON ID IN HTML
+        <div class="prev"><i class="fas fa-chevron-up"></i></div>
+        <div class="next"><i class="fas fa-chevron-down"></i></div>
 
-prev.addEventListener("click", function(){
-    }
-});
+        <img id="main-pic" src="${imgArray[i]}" alt="">
 
-succ.addEventListener("click", function(){    
-});
+    `;
+}
 
-*/
+mainPicture.innerHTML = imgShowed;
+previewImage.innerHTML = imgSide;
