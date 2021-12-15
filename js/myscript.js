@@ -30,12 +30,12 @@ const previewImage = document.querySelector(".my_preview-images");// Selettore c
 // Definizione variabili
 let imgShowed = "";
 let imgSide = "";
-let classActive = 1;
+let classActive = 0;
 
 // Cicli for per inserimento immagini e testo in html
 for (let i = 0; i < imgArray.length; i++){
     imgShowed += `
-    <div class="picture-show">
+    <div class="picture-show" id="img-num-${i}">
         <img id="main-pic" src="${imgArray[i]}" alt="">
 
         <div class="my_pic-info">
@@ -49,14 +49,69 @@ for (let i = 0; i < imgArray.length; i++){
 
 for (let i = 0; i < imgArray.length; i++){
     imgSide += `
-
-        <div class="prev"><i class="fas fa-chevron-up"></i></div>
-        <div class="next"><i class="fas fa-chevron-down"></i></div>
-
-        <img id="main-pic" src="${imgArray[i]}" alt="">
-
+    <div class="my_preview-images d-flex flex-column justify-content-center align-items-center col-12" id="img-preview-num-${i}">
+            <img class="main-pic h-100" src="${imgArray[i]}" alt="">
+    </div>
     `;
 }
 
 mainPicture.innerHTML = imgShowed;
 previewImage.innerHTML = imgSide;
+
+let mainImgActive = document.getElementById("img-num-" + classActive); //Rendere visibile l'immagine principale
+mainImgActive.classList.add("active");
+let previewImgActive = document.getElementById("img-preview-num-" + classActive);
+previewImgActive.classList.add("my_preview-selected");
+
+/*CLICK PULSANTI */
+
+let btnPrev = document.querySelector(".prev");
+let btnNext = document.querySelector(".next");
+
+btnPrev.addEventListener("click", function (){ //btn Prev
+    classActive--;
+    if (classActive < 0){ //LOOP VERSO L'ALTO
+        classActive = 4;
+    }
+
+    if (previewImgActive.classList.contains("my_preview-selected")){ // INSERISCE BORDO ALL=IMMAGINE PREVIEW SELEZIONATA
+        previewImgActive.classList.toggle("my_preview-selected");
+    }
+
+    if (mainImgActive.classList.contains("active")){ // DISPLAYBLOCK SULL'IMMAGINE SELEZIONATA (NELLA SITUAZIONE PRECEDENTE L'IMMAGINE È IN DISPLAY NONE)
+        mainImgActive.classList.toggle("active");
+    }
+
+    mainImgActive = document.getElementById("img-num-" + classActive); //AGGIUNTA CLASSE ACTIVE
+    mainImgActive.classList.add("active");
+    
+    previewImgActive = document.getElementById("img-preview-num-" + classActive); //AGGIUNTA CLASSE BORDO E OPACITY
+    previewImgActive.classList.add("my_preview-selected");
+}
+);
+
+btnNext.addEventListener("click", function (){ //btn Next
+    classActive++;
+    if (classActive > 4){  //LOOP VERSO IL BASSO
+        classActive = 0;
+    }
+
+    if (previewImgActive.classList.contains("my_preview-selected")){ // INSERISCE BORDO ALL=IMMAGINE PREVIEW SELEZIONATA
+        previewImgActive.classList.toggle("my_preview-selected");
+    }
+
+    if (mainImgActive.classList.contains("active")){ // DISPLAYBLOCK SULL'IMMAGINE SELEZIONATA (NELLA SITUAZIONE PRECEDENTE L'IMMAGINE È IN DISPLAY NONE)
+        mainImgActive.classList.toggle("active");
+    }
+
+    mainImgActive = document.getElementById("img-num-" + classActive); //AGGIUNTA CLASSE ACTIVE
+    mainImgActive.classList.add("active");
+    
+    previewImgActive = document.getElementById("img-preview-num-" + classActive); //AGGIUNTA CLASSE BORDO E OPACITY
+    previewImgActive.classList.add("my_preview-selected");
+}
+);
+
+/*
+PROBLEMA CON IMMAGINI LATERALI (ALTEZZA ESTREMAMENTE BASSA)
+*/

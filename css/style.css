@@ -9,12 +9,12 @@ body{
 }
 
 .container-fluid{
-    height: 50vh;
     width: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    height: 600px;
 }
 
 img{
@@ -23,9 +23,14 @@ img{
     object-fit: cover;
 }
 
-.my_preview-images img{
+.my_preview-images .main-pic{
     opacity: 0.5;
     height: calc(100% / 5);
+}
+
+
+.my_main-picture img{
+    height: 600px;
 }
 
 .my_preview-images, .my_main-picture{
@@ -38,39 +43,36 @@ img{
     padding: 0 50px;
     text-align: end;
     bottom: 10px;
+    width: 100%;
 }
 
 .picture-show{
     display: none;
 }
 
-.my_preview-images .prev, .my_preview-images .next{
+.container-preview-img .prev, .container-preview-img .next{
     position: absolute;
     background-color: rgb(255, 255, 255);
     border-radius: 100%;
     cursor: pointer;
     padding: 2px 5px;
-    z-index: 1;
+    z-index: 3;
     opacity: 0.8;
 }
 
-.my_preview-images .prev{
+.container-preview-img .prev{
     top: 10px;
 }
 
-.my_preview-images .next{
+.container-preview-img .next{
     bottom: 10px;
 }
 
-#my_preview-selected{
+.my_preview-selected{
     opacity: 1;
     border: 3px solid rgb(255, 255, 255);
 }
 
-.hidden{
-    display: none;
-}
-
-#active{
+.active{
     display: block;
 }
